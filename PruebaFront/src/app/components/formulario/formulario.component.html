@@ -1,0 +1,41 @@
+<form id="contactForm" [formGroup]="form" (ngSubmit)="submit()">
+
+  <div class="row">
+    <div class="col-sm-4">
+      <mat-form-field>
+        <input matInput placeholder="Nombre" formControlName="firstname" class="form-control"  name="firstname">
+      </mat-form-field>
+      <br>
+    </div>
+    <div class="col-sm-4">
+      <mat-form-field>
+        <input matInput placeholder="Password" type="password" formControlName="password" class="form-control"  name="lastname">
+      </mat-form-field>
+      <br>
+    </div>
+    <div class="col-sm-4">
+      <mat-form-field style="float: left; " appearance="outline">
+        <mat-label>Seleccione una opción</mat-label>
+        <mat-select  formControlName="rol" [(value)]="rolSelected" >
+          <mat-option *ngFor="let opcion of opcionesCheckBox" [value]="opcion.id">
+            {{ opcion.nombreRol }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="editando">
+    <div class="col-sm-4">
+      <mat-form-field style="float: left; " appearance="outline">
+        <mat-label>Estado del Usuario</mat-label>
+        <mat-select  formControlName="status" [(value)]="statusSelected" >
+          <mat-option *ngFor="let opcion of selectEstatus" [value]="opcion.value">
+            {{ opcion.display }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <button [ngClass]="!editando? 'boton btn btnColor': 'boton btn btnColorEdit'" id="btnSubmit" mat-raised-button type="submit" ><i style="font-size: 40px;" [ngClass]="claseButton" aria-hidden="true"></i></button>
+  </form>

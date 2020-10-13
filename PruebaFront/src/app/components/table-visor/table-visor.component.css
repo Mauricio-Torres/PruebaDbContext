@@ -1,0 +1,193 @@
+
+/* .progress-bar {
+  color: #000 !important;
+  word-wrap: normal !important;
+} */
+
+/* :host ::ng-deep .progress {
+  margin-bottom: 0px !important;
+} */
+
+/**
+*                 tabla ajustable
+**/
+
+:host /deep/ .data-table-row {
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: initial;
+}
+
+:host ::ng-deep .pagination-pages{
+  width: auto !important;
+}
+
+:host ::ng-deep .pagination-page {
+  width: auto !important;
+}
+
+:host ::ng-deep .hasPrevious,
+:host ::ng-deep .hasNext {
+  display: none !important;
+}
+
+:host ::ng-deep .preloader-wrapper {
+  display: inline-block;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  margin-left: 47%;
+  z-index: 1;
+}
+
+:host ::ng-deep .preloader-wrapper.active {
+  -webkit-animation: container-rotate 1568ms linear infinite;
+  animation: container-rotate 1568ms linear infinite;
+}
+
+:host ::ng-deep .spinner-blue, .spinner-blue-only {
+  border-color: #4285f4;
+}
+
+:host /deep/ ng2-smart-table tbody tr td .progress {
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+}
+
+.icon-name {
+  cursor: default;
+  position: relative;
+  top: -8px;
+  left: 7px;
+}
+
+.pb-color-white {
+  color: rgb(255, 2, 2) !important;
+  word-wrap: normal;
+}
+
+@media (max-width: 991px) {
+  :host ::ng-deep .data-table-box {
+      min-width: 100%;
+      overflow-x: scroll;
+      margin-bottom: 10px;
+  }
+
+      :host ::ng-deep .data-table-box .table-condensed {
+          min-width: 800px;
+      }
+}
+
+:host ::ng-deep .fila-totales {
+  font-weight: 600;
+}
+  :host ::ng-deep .fila-totales a {
+      color: #135a97;
+  }
+
+:host ::ng-deep .data-table-row > tbody > tr:last-child {
+  background-color: blue !important;
+}
+
+
+/* Style buttons */
+.btn {
+  background-color: DodgerBlue; /* Blue background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 12px 16px; /* Some padding */
+  font-size: 16px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+}
+
+.btnTrasparent {
+  font-size:40px;
+  background-color: transparent; /* Blue background */
+  border: none; /* Remove borders */
+  color: rgb(255, 0, 234); /* White text */
+  padding: 12px 16px; /* Some padding */
+  font-size: 16px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+}
+.btnTrasparent2 {
+  font-size:40px;
+  background-color: transparent; /* Blue background */
+  border: none; /* Remove borders */
+  color: rgb(51, 255, 0); /* White text */
+  padding: 12px 16px; /* Some padding */
+  font-size: 16px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+}
+
+.btnTrasparent3 {
+  font-size:40px;
+  background-color: transparent; /* Blue background */
+  border: none; /* Remove borders */
+  color: rgb(255, 166, 0); /* White text */
+  padding: 12px 16px; /* Some padding */
+  font-size: 16px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+}
+
+.btnTrasparent4 {
+  font-size:40px;
+  background-color: transparent; /* Blue background */
+  border: none; /* Remove borders */
+  color: rgb(250, 0, 0); /* White text */
+  padding: 12px 16px; /* Some padding */
+  font-size: 16px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+}
+
+.btnTrasparent4:hover {
+  background-color: transparent;
+  color: rgb(238, 255, 0);
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: rgb(240, 88, 194);
+}
+ .btnTrasparent:hover {
+  background-color: transparent;
+  color: rgb(255, 166, 0);
+}
+ .btnTrasparent2:hover {
+  background-color: transparent;
+  color: rgb(255, 166, 0);
+}
+ .btnTrasparent3:hover {
+  background-color: transparent;
+  color: rgb(166, 39, 0);
+}
+
+
+.line {
+  display: inline;
+  padding: 5px;
+}
+
+.expandircelda {
+  height: 60px;
+  width: 200;
+  background-color:black;
+}
+
+
+
+
+/*  estilos tabla */
+
+.table-striped>tbody>tr:nth-child(odd)>td,
+.table-striped>tbody>tr:nth-child(odd)>th {
+ background-color: #ff0;
+}
+.table-striped>tbody>tr:nth-child(even)>td,
+.table-striped>tbody>tr:nth-child(even)>th {
+ background-color: #ccc;
+}
+.table-striped>thead>tr>th {
+   background-color: #eee;
+}

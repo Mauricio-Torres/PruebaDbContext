@@ -1,0 +1,20 @@
+
+        <aside class="left-sidebar">
+          <div class="scroll-sidebar">
+              <nav class="sidebar-nav">
+                  <ul id="sidebarnav">
+                      <li class="user-profile">
+
+                        <!-- <img [src]="usuario.img | imagen" alt="user" /> -->
+                          <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">  <span class="hide-menu">{{ usuario.nombre }} </span></a>
+                          <ul aria-expanded="false" class="collapse">
+                              <li><a id="inicio" href="javascript:void()" (click)="doPag('inicio')" routerLink= "/inicio">Home</a></li>
+                              <li><a id="dashboard" routerLinkActive="active" (click)="doPag('dashboard')" routerLink= "/dashboard"> Usuarios </a></li>
+                              <li><a (click)="servicioUsuario.logout()" class="pointer">Logout</a></li>
+                          </ul>
+                      </li>
+                      <li class="nav-devider"></li>
+                  </ul>
+              </nav>
+          </div>
+      </aside>

@@ -1,0 +1,9 @@
+<div appEventsdom>
+  <app-formulario *ngIf="!mostrarComponente()"
+  [opcionesCheckBox]="opcionesCheckBox"
+  (SetUsuario)="editarUsuario($event)"
+  [user]="user"
+  [editando]="true"
+  [claseButton]="'fa fa-pencil-square'">
+  </app-formulario>
+</div>

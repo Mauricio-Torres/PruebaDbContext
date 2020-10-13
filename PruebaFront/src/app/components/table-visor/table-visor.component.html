@@ -1,0 +1,59 @@
+<!--TABLA -->
+<div *ngIf="grillaLista()">
+    <div class="line" *ngIf="mostrarTotalArchivos">
+        <i class="fa fa-tags"></i>
+        <span class="icon-name">{{totalRegistros.toLocaleString("es-co")}} {{totalRegistros==1 ? "Reporte" : "Reportes" }}</span>
+    </div>
+
+  <data-table headerTitle=""
+              [limit]="limiteGrilla"
+              [header]="titleHeader"
+              (reload)="reloadItems($event)"
+              [sortBy]="shortDefaultColumn"
+              [sortAsc]="sortAscDefault"
+              [header]="false"
+
+              [indexColumn]="false"
+              [showReloading]="false"
+              [items]="itemsGrilla"
+              [itemCount]="totalRegistros"
+              [substituteRows]="substituteRows">
+      <data-table-column *ngFor="let columna of columnas"
+                         [property]="columna.orden"
+                         [header]="columna.titulo"
+                         [sortable]="columna.sortable"
+                         [resizable]="true"
+                         style="text-align:center;"
+                         min-width="50px">
+          <ng-template #dataTableCell let-item="item" let-index="row.index">
+              <div [ngClass]="changeclass(index)" class="{{(filaTotal && (index + 1) === itemsGrilla.length)?'fila-totales':''}}">
+                  <!--COLUMNA TIPO TEXTO PLANO-->
+                  <div *ngIf="columna.tipo === tiposColumnas.textoPlano">
+                    <div *ngIf="item[columna.columnaValor] == true || item[columna.columnaValor] == false; else NoOpcionNA" style="text-align: left;">
+                      <div *ngIf="item[columna.columnaValor] == false; else icono">
+                        <i style="color: red;" class="fa fa-times" aria-hidden="true"></i>
+                      </div>
+                      <ng-template #icono>
+                        <i style="color: greenyellow;" class="fa fa-check" aria-hidden="true"></i>
+                   </ng-template>
+                    </div>
+                      <ng-template #NoOpcionNA>
+
+                           {{(item[columna.columnaValor] != null && item[columna.columnaValor] != undefined)?item[columna.columnaValor].toLocaleString("es-CO"):''}}
+                      </ng-template>
+                  </div>
+
+                  <!--COLUMNA TIPO EMISOR DE ACCIONES-->
+                  <a style="position: static;" *ngIf="(columna.tipo === tiposColumnas.emisorAccion) "
+                     (click)="emitirAccion(columna.identificadorAccion, item)">
+
+                     <button [ngClass]="columna.classColorButton===undefined? 'btn': columna.classColorButton" >
+                      <i [ngClass]="columna.classBoton"></i>
+                    </button>
+
+                  </a>
+              </div>
+          </ng-template>
+      </data-table-column>
+  </data-table>
+</div>

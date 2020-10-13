@@ -1,0 +1,67 @@
+[
+  {
+    "titulo":"Introducción",
+    "descripcion":"Descripción general del diseñador de reportes web.",
+    "nombreDocumento":"Archivo 1.pdf"
+  },
+  {
+    "titulo":"Herramientas de diseñador de informes",
+    "descripcion":"Herramientas de diseñador de informes.",
+    "nombreDocumento":"Archivo 2.pdf"
+  },
+  {
+    "titulo":"Asistente de informes",
+    "descripcion":"Asistente diseñador de informes, coneccion, agrupación y ordenamientos a datos.",
+    "nombreDocumento":"Archivo 3.pdf"
+  },
+  {
+    "titulo":"Creacion de informes",
+    "descripcion":"Describe la creacion de informes de manera manual y el uso de los componentes del diseñador web.",
+    "nombreDocumento":"Archivo 4.pdf"
+  },
+  {
+    "titulo":"Diseño",
+    "descripcion":"Breve descripcion del uso de diseño de reportes.",
+    "nombreDocumento":"Archivo 5.pdf"
+  },
+  {
+    "titulo":"Elementos diseñador web",
+    "descripcion":"Descripción del uso de elementos como tablas, graficos, codigos de barra, lineas, etc.",
+    "nombreDocumento":"Archivo 6.pdf"
+  },
+  {
+    "titulo":"Manipulación de datos",
+    "descripcion":"Describe como ordenar, filtrar  y agruparlos datos",
+    "nombreDocumento":"Archivo 7.pdf"
+  },
+  {
+    "titulo":"Formato de datos",
+    "descripcion":"Describe como dar formato a los datos por ejemplo tipos de fecha, datos con signo de pesos, etc.",
+    "nombreDocumento":"Archivo 8.pdf"
+  },
+  {
+    "titulo":"Parametros",
+    "descripcion":"Este segmento describe como asignar parametros o variables a los informes.",
+    "nombreDocumento":"Archivo 9.pdf"
+  },
+  {
+    "titulo":"Expresiones y/o funciones",
+    "descripcion":"El diseñador de informes permite agregar funciones de agrupamiento como personalizadas, esta seccion describe el uso de diferentes funciones que dispone la herramienta",
+    "nombreDocumento":"Archivo 10.pdf"
+  },
+  {
+    "titulo":"Deseño de informes dinamicos",
+    "descripcion":"",
+    "nombreDocumento":"Archivo 11.pdf"
+  },
+  {
+    "titulo":"Navegación de informes",
+    "descripcion":"Describe como adicionar pie de pagina, hipervinculos, etc.",
+    "nombreDocumento":"Archivo 12.pdf"
+  },
+  {
+    "titulo":"Interactividad",
+    "descripcion":"Describe como adicionar interactividad a los informes y la creación de informes detallados",
+    "nombreDocumento":"Archivo 13.pdf"
+  }
+]

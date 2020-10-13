@@ -1,0 +1,61 @@
+<!-- <form [formGroup] ="form" >
+
+  <mat-form-field appearance="fill">
+    <mat-date-range-input [rangePicker]="picker" formGroupName="dateRange">
+      <input matStartDate placeholder="Start date" formControlName="start">
+      <input matEndDate placeholder="End date" formControlName="end">
+    </mat-date-range-input>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-date-range-picker #picker></mat-date-range-picker>
+  </mat-form-field>
+</form> -->
+
+<div appEventsdom>
+
+  <div class="row shadow">
+    <div class="col-12 ">
+        <div class="card">
+            <div class="card-body" style="margin: 0px 10px 0px 10px; padding: 10px 10px 0px 10px; height: 87px;">
+              <mat-form-field style="float: left; " appearance="outline" *ngIf="permisosFiltrarPorRol()">
+                <mat-label>Seleccione una opción</mat-label>
+                <mat-select [(value)]="selected" (selectionChange)="changeBox($event)">
+
+                  <mat-option *ngFor="let opcion of opcionesCheckBox" [value]="opcion.id">
+                    {{ opcion.nombreRol }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              <app-busqueda *ngIf="permisosBusqueda()" appKeyPress (txtBusqueda)="txtBusqueda($event)" style="float: right;"></app-busqueda>
+
+              <button style="float: right;" (click)="crearUsuario()"  class="boton btnTrasparent2" id="btnSubmit" mat-raised-button type="submit" >
+                <i style="font-size: 24px;" class="fa fa-plus-circle" aria-hidden="true"></i>
+              </button>
+
+              <button style="float: right;" [ngClass]="'btn'" (click)="refrescar()" >
+                <i style="font-size: 20px;" [ngClass]="'fa fa-refresh'"></i>
+              </button>
+          </div>
+        </div>
+    </div>
+  </div>
+
+
+
+  <div class="row shadow" style="margin-top: 6px;">
+    <div class="col-12 ">
+        <div class="card">
+            <div class="card-body" >
+              <app-table-visor *ngIf="mostrarGrilla"
+              [columnas]="columnas"
+              [totalRegistros]="totalRegistrosGrilla"
+              [items]="itemsGrilla"
+              (reloadEmitter)="cambioEnGrilla($event)"
+              (columnSelectedEmitter)="emisionAccionColumna($event)">
+            </app-table-visor>
+          </div>
+        </div>
+    </div>
+  </div>
+
+</div>
