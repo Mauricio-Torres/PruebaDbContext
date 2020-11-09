@@ -1,0 +1,6 @@
+2020-10-29T10:29:51.2183931-05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-10-29T10:29:51.2263847-05:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-10-29T10:29:51.2284004-05:00  [INF] Content root path: "C:\Users\Mauricio\Documents\Proyectos Web\PruebaDbContext\PruebaBack\PruebaTecnica" (b5d60022)
+2020-10-29T11:39:50.3631802-05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-10-29T11:39:50.3701649-05:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-10-29T11:39:50.3722005-05:00  [INF] Content root path: "C:\Users\Mauricio\Documents\Proyectos Web\PruebaDbContext\PruebaBack\PruebaTecnica" (b5d60022)

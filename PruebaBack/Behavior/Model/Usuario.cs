@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Behavior.Model
+﻿namespace Behavior.Model
 {
     public class Usuario: Entity
     {

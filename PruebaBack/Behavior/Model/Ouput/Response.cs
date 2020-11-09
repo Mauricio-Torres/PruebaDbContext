@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Behavior.Model.Ouput
+﻿namespace Behavior.Model.Ouput
 {
     public class Response<T>
     {

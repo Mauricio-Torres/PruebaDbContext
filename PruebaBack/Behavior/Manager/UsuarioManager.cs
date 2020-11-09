@@ -3,74 +3,80 @@ using Behavior.Model;
 using Behavior.Model.Ouput;
 using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Behavior.Manager
 {
     public class UsuarioManager
     {
-        IUsuarioRepositorio usuarioRepositorio;
-        public UsuarioManager(IUsuarioRepositorio _usuarioRepositorio)
+        readonly IUsuarioRepositorio usuarioRepositorio;
+        public UsuarioManager(IUsuarioRepositorio _usuarioRepositorio) { usuarioRepositorio = _usuarioRepositorio; }
+        
+        /// <summary>
+        /// Retorna Usuario por nombre y password
+        /// </summary>
+        /// <param name="Nombre">nombre usuario</param>
+        /// <param name="pass">password de usuario</param>
+        /// <returns></returns>
+        public UsuariosOuput GetUsuario(string Nombre, string pass) 
         {
-            usuarioRepositorio = _usuarioRepositorio;
+            var user = usuarioRepositorio.GetUsuario(Nombre, pass) as Usuario;
+  
+            if (user != null)
+            {
+                return new UsuariosOuput() { 
+                 Id = user.Id,
+                 idRol = user.IdRol,
+                 Nombre = user.Nombre,
+                 Status = user.Status
+                };
+            }
+            return null;
         }
 
-        public Usuario GetUsuario (string Nombre, string pass)
-        {
-            return usuarioRepositorio.GetUsuario(Nombre, pass) as Usuario;
-        }
+        /// <summary>
+        /// borrar usuario
+        /// </summary>
+        /// <param name="idUsuario">id usuario eliminar</param>
+        /// <returns></returns>
+        public bool DeleteUsuario(int idUsuario) { return usuarioRepositorio.Delet(idUsuario); }
 
-        public bool DeleteUsuario(int idUsuario)
-        {
-            return usuarioRepositorio.Delet(idUsuario);
-        }
-
-        public Usuario GetUsuario(int idUsuario)
-        {
-            return usuarioRepositorio.GetUsuario(idUsuario) as Usuario;
-        }
+        /// <summary>
+        /// retornar usuario por id
+        /// </summary>
+        /// <param name="idUsuario">id usuario en la base de datos</param>
+        /// <returns></returns>
+        public Usuario GetUsuario(int idUsuario) { return usuarioRepositorio.GetUsuario(idUsuario) as Usuario; }
+        
+        /// <summary>
+        /// insertar usuario 
+        /// </summary>
+        /// <param name="usuario">modelo usuario </param>
+        /// <returns></returns>
         public bool Insert(Usuario usuario)
         {
-            try
+            var user = usuarioRepositorio.Get(usuario.Nombre) as Usuario;
+            if (user == null)
             {
-                var user = usuarioRepositorio.Get(usuario.Nombre) as Usuario;
-                if (user == null)
-                {
-                    return usuarioRepositorio.Insert(usuario);
-                }
-                return false;
+                return usuarioRepositorio.Insert(usuario);
             }
-            catch (Exception)
-            {
-                throw;
-            }
+            return false;
         }
 
         public List<UsuariosOuput> GetUsuarios(string search, int idRol)
-        {
-            return usuarioRepositorio.GetUsuarios(search, idRol);
-        }
+        { return usuarioRepositorio.GetUsuarios(search, idRol); }
 
         public bool UpdateUsuarios(Usuario usuario)
         {
-            try
-            {
-                var user = usuarioRepositorio.Get(usuario.Nombre) as Usuario;
+            var user = usuarioRepositorio.Get(usuario.Nombre) as Usuario;
 
-                if (usuario.Id != user.Id && user != null && usuario.Nombre == user.Nombre)
-                {
-                    return false;
-                }
-
-                return usuarioRepositorio.Update(usuario);
-                
-            }
-            catch (Exception)
+            if (user != null 
+                && usuario.Id != user.Id
+                && usuario.Nombre == user.Nombre)
             {
-                throw;
+                return false;
             }
+
+            return usuarioRepositorio.Update(usuario);
         }
-
     }
 }

@@ -44,7 +44,6 @@ namespace DataConect.Repositorios
 
         public bool Insert(Entity entity)
         {
-            var permiso = (Permisos)entity;
             context.Permisos.Add(entity as Permisos);
             context.SaveChanges();
             return true;

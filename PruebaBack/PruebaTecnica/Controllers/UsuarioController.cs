@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Behavior.Manager;
+﻿using Behavior.Manager;
 using Behavior.Model;
 using Behavior.Model.Input;
 using Behavior.Model.Ouput;
 using DataConect.Utils;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
 
 namespace PruebaTecnica.Controllers
 {
@@ -34,7 +31,7 @@ namespace PruebaTecnica.Controllers
 
                 if (users != null)
                 {
-                    response.CountData = users.Count();
+                    response.CountData = users.Count;
                     response.Data = users;
                     response.Status = true;
                 }
@@ -95,7 +92,8 @@ namespace PruebaTecnica.Controllers
             Response<bool> response = new Response<bool>();
             try
             {
-                var user = new Usuario() { 
+                var user = new Usuario()
+                {
                     Id = Convert.ToInt32(usuario.id),
                     IdRol = Convert.ToInt32(usuario.idRol),
                     Nombre = usuario.nombre,

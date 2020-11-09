@@ -5,11 +5,12 @@ using DataConect.Utils;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
 
 namespace PruebaTecnica.Controllers
 {
     [Route("api/[controller]")]
+    //[Authorize(Permisos)]
+
     [ApiController]
     public class AuthenticationController : ControllerBase
     {
@@ -36,19 +37,19 @@ namespace PruebaTecnica.Controllers
 
                 if (user != null)
                 {
-                    var permisos = permisosManager.GetAllPermisos(user.IdRol);
+                    var permisos = permisosManager.GetAllPermisos(user.idRol);
                     AuthResponse authResponse = new AuthResponse();
                     authResponse.usuario = user;
                     authResponse.permisos = permisos;
 
                     response.Data = authResponse;
                     response.Status = true;
-                } 
+                }
                 else
                 {
                     response.Status = false;
                     response.Error = "Usuario y/o contraseña incorrectos";
-                }        
+                }
             }
             catch (Exception ex)
             {

@@ -1,6 +1,5 @@
 ﻿using Behavior.Manager;
 using Behavior.Model;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using PruebaTecnica.DataBase;
@@ -12,7 +11,7 @@ using System.Threading.Tasks;
 namespace PruebaTecnica.InicializarData
 {
     public class InsertData
-    { 
+    {
         public static async Task Initialize(IServiceProvider serviceProvider)
         {
             try
@@ -213,12 +212,12 @@ namespace PruebaTecnica.InicializarData
                     }
                 }
             }
-            catch (Exception ex )
+            catch (Exception ex)
             {
 
                 throw;
             }
-          
+
         }
 
         private static int GetRol(string NombreRol, IServiceProvider serviceProvider)
@@ -235,7 +234,7 @@ namespace PruebaTecnica.InicializarData
             return rol.Id;
         }
 
-        private static async Task<bool> EnsureUser(IServiceProvider serviceProvider, List<Usuario> usuarios )
+        private static async Task<bool> EnsureUser(IServiceProvider serviceProvider, List<Usuario> usuarios)
         {
             try
             {
@@ -265,7 +264,8 @@ namespace PruebaTecnica.InicializarData
             {
                 var permisosManager = serviceProvider.GetService<PermisosManager>();
 
-                permisos.ForEach(permisos => {
+                permisos.ForEach(permisos =>
+                {
 
                     var p = permisosManager.Get(permisos.Permiso);
                     if (p == null)
@@ -286,7 +286,8 @@ namespace PruebaTecnica.InicializarData
             var roleManager = serviceProvider.GetService<RolesManager>();
             try
             {
-                roles.ForEach(rolx => {
+                roles.ForEach(rolx =>
+                {
 
                     var rol = roleManager.Get(rolx.NombreRol);
                     if (rol == null)
@@ -310,7 +311,8 @@ namespace PruebaTecnica.InicializarData
             try
             {
 
-                rolesPermisos.ForEach(rp => {
+                rolesPermisos.ForEach(rp =>
+                {
 
                     var rol = rolePermisoManager.Get(rp.IdRol, rp.IdPermiso);
                     if (rol == null)

@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Behavior.Manager;
+﻿using Behavior.Manager;
 using Behavior.Model;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 
 namespace PruebaTecnica.Controllers
 {
@@ -17,7 +13,7 @@ namespace PruebaTecnica.Controllers
 
         public RolesController(RolesManager _rolesManager)
         {
-           rolesManager = _rolesManager;
+            rolesManager = _rolesManager;
         }
 
         [HttpGet]

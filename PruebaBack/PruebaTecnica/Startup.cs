@@ -52,7 +52,7 @@ namespace PruebaColfuturo
                       .WithOrigins(
                           _appConfiguration
                               .Split(",", StringSplitOptions.RemoveEmptyEntries)
-                              
+
                               .ToArray()
                       )
                       .AllowAnyHeader()
