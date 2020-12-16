@@ -94,7 +94,7 @@ namespace PruebaTecnica.Controllers
             {
                 var user = new Usuario()
                 {
-                    Id = Convert.ToInt32(usuario.id),
+                    // Id = Convert.ToInt32(usuario.id),
                     IdRol = Convert.ToInt32(usuario.idRol),
                     Nombre = usuario.nombre,
                     Password = usuario.password,
